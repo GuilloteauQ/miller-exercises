@@ -1,5 +1,15 @@
 # Miller Exercises
 
+This repository contains some small exercises to learn the [Miller (`mlr`) tool](https://github.com/johnkerl/miller).
+
+The data comes from the [RGriffin Kaggle dataset: 120 years of Olympic history](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results/)
+
+You can download the data as such:
+
+```
+wget https://raw.githubusercontent.com/GuilloteauQ/miller-exercises/main/olympics.csv
+```
+
 
 ## Exercise 1
 
