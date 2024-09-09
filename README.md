@@ -173,7 +173,7 @@ For each team, what is the number of Gold, Silver, and Bronze medals?
 
 ## Exercise 12
 
-How many Judo athlete were present at the 2012 Summer Olympics?
+How many Judo athletes were present at the 2012 Summer Olympics?
 
 <details>
   <summary>Solution</summary>
@@ -181,6 +181,62 @@ How many Judo athlete were present at the 2012 Summer Olympics?
   
   ```
   mlr --c2p filter '$sport == "Judo" && $year == 2012' then uniq -f name -n  olympics.csv
+  ```
+
+</details>
+
+## Exercise 13
+
+Who are the 10 athletes with the most participations to any Olympic event (there could be several event per Olympics)?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p stats1 -a count -f name -g name then top -f name_count -n 10 -a olympics.csv
+  ```
+
+</details>
+
+## Exercise 14
+
+Who is the athlete with the most participations in a single Olympic, and in which year?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p stats1 -a count -f name -g name,year then top -f name_count -a olympics.csv
+  ```
+
+</details>
+
+## Exercise 15
+
+Who is the athlete who participated to the most Olympic editions, and how many editions did they participate to?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p uniq -g name,year then stats1 -a count -f name -g name then top -a -f name_count olympics.csv
+  ```
+
+</details>
+
+## Exercise 16
+
+Which cities hosted several times the Olympics?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p --from olympics.csv uniq -f city,year then count -g city then filter '$count > 1'
   ```
 
 </details>
