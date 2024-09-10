@@ -382,7 +382,12 @@ For each team, what is the number of Gold, Silver, and Bronze medals?
   
   
   ```
-  mlr --icsv --opprint filter '$medal != "NA"' then cut -f team,medal then stats1 -a count -f medal -g team,medal then reshape -s medal,medal_count then unsparsify then head olympics.csv
+  mlr --icsv --opprint filter '$medal != "NA"' \
+                  then cut -f team,medal \
+                  then stats1 -a count -f medal -g team,medal \
+                  then reshape -s medal,medal_count \
+                  then unsparsify \
+                  then head olympics.csv
   ```
 
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
@@ -516,7 +521,9 @@ Who is the athlete who participated to the most Olympic editions, and how many e
   
   
   ```
-  mlr --c2p uniq -g name,year then stats1 -a count -f name -g name then top -a -f name_count olympics.csv
+  mlr --c2p uniq -g name,year \
+      then stats1 -a count -f name -g name \
+      then top -a -f name_count olympics.csv
   ```
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
@@ -546,7 +553,9 @@ Which cities hosted several times the Olympics?
   
   
   ```
-  mlr --c2p --from olympics.csv uniq -f city,year then count -g city then filter '$count > 1'
+  mlr --c2p --from olympics.csv uniq -f city,year \
+                           then count -g city \
+                           then filter '$count > 1'
   ```
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
