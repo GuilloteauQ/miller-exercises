@@ -573,3 +573,57 @@ Sankt Moritz 2
 
 </details>
 </details>
+
+
+## Exercise 17
+
+Which Olympics had the highest proportion of female athletes?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p --from olympics.csv uniq -g id,year,sex \
+                         then stats1 -a count -f sex -g year,sex \
+                         then reshape -s sex,sex_count \
+                         then unsparsify \
+                         then put '$percentF = 100 * $F / ($F + $M)' \
+                         then cut -f year,percentF\
+                         then top -f percentF -n 10 -a
+  ```
+
+  - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
+
+  - [`reshape`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#reshape)
+
+  - [`unsparsify`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#unsparsify)
+
+  - [`put`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#put)
+
+  - [`cut`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#cut)
+
+  - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
+
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+year percentF
+2016 45.03086143662224
+2012 44.25216316440049
+2008 42.288283328745756
+2010 40.73343848580441
+2004 40.73126835275173
+2014 40.145719489981786
+2006 38.291900561347234
+2000 38.20794590025359
+2002 36.93205502292622
+1998 36.209270307480494
+  ```
+
+</details>
+</details>
+
