@@ -27,6 +27,26 @@ Display the first few rows of the CSV in the pretty-print format
 
   [`head`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#head)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+id name                     sex age height weight team           noc games       year season city        sport         event                              medal
+1  A Dijiang                M   24  180    80     China          CHN 1992 Summer 1992 Summer Barcelona   Basketball    Basketball Men's Basketball        NA
+2  A Lamusi                 M   23  170    60     China          CHN 2012 Summer 2012 Summer London      Judo          Judo Men's Extra-Lightweight       NA
+3  Gunnar Nielsen Aaby      M   24  NA     NA     Denmark        DEN 1920 Summer 1920 Summer Antwerpen   Football      Football Men's Football            NA
+4  Edgar Lindenau Aabye     M   34  NA     NA     Denmark/Sweden DEN 1900 Summer 1900 Summer Paris       Tug-Of-War    Tug-Of-War Men's Tug-Of-War        Gold
+5  Christine Jacoba Aaftink F   21  185    82     Netherlands    NED 1988 Winter 1988 Winter Calgary     Speed Skating Speed Skating Women's 500 metres   NA
+5  Christine Jacoba Aaftink F   21  185    82     Netherlands    NED 1988 Winter 1988 Winter Calgary     Speed Skating Speed Skating Women's 1,000 metres NA
+5  Christine Jacoba Aaftink F   25  185    82     Netherlands    NED 1992 Winter 1992 Winter Albertville Speed Skating Speed Skating Women's 500 metres   NA
+5  Christine Jacoba Aaftink F   25  185    82     Netherlands    NED 1992 Winter 1992 Winter Albertville Speed Skating Speed Skating Women's 1,000 metres NA
+5  Christine Jacoba Aaftink F   27  185    82     Netherlands    NED 1994 Winter 1994 Winter Lillehammer Speed Skating Speed Skating Women's 500 metres   NA
+5  Christine Jacoba Aaftink F   27  185    82     Netherlands    NED 1994 Winter 1994 Winter Lillehammer Speed Skating Speed Skating Women's 1,000 metres NA
+  ```
+
+</details>
+
 </details>
 
 ## Exercise 2
@@ -42,6 +62,26 @@ Display only the rows for the Summer Olympics.
   ```
 
   [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+id name                               sex age height weight team           noc games       year season city        sport      event                                  medal
+1  A Dijiang                          M   24  180    80     China          CHN 1992 Summer 1992 Summer Barcelona   Basketball Basketball Men's Basketball            NA
+2  A Lamusi                           M   23  170    60     China          CHN 2012 Summer 2012 Summer London      Judo       Judo Men's Extra-Lightweight           NA
+3  Gunnar Nielsen Aaby                M   24  NA     NA     Denmark        DEN 1920 Summer 1920 Summer Antwerpen   Football   Football Men's Football                NA
+4  Edgar Lindenau Aabye               M   34  NA     NA     Denmark/Sweden DEN 1900 Summer 1900 Summer Paris       Tug-Of-War Tug-Of-War Men's Tug-Of-War            Gold
+8  Cornelia "Cor" Aalten (-Strannood) F   18  168    NA     Netherlands    NED 1932 Summer 1932 Summer Los Angeles Athletics  Athletics Women's 100 metres           NA
+8  Cornelia "Cor" Aalten (-Strannood) F   18  168    NA     Netherlands    NED 1932 Summer 1932 Summer Los Angeles Athletics  Athletics Women's 4 x 100 metres Relay NA
+10 Einar Ferdinand "Einari" Aalto     M   26  NA     NA     Finland        FIN 1952 Summer 1952 Summer Helsinki    Swimming   Swimming Men's 400 metres Freestyle    NA
+12 Jyri Tapani Aalto                  M   31  172    70     Finland        FIN 2000 Summer 2000 Summer Sydney      Badminton  Badminton Men's Singles                NA
+13 Minna Maarit Aalto                 F   30  159    55.5   Finland        FIN 1996 Summer 1996 Summer Atlanta     Sailing    Sailing Women's Windsurfer             NA
+13 Minna Maarit Aalto                 F   34  159    55.5   Finland        FIN 2000 Summer 2000 Summer Sydney      Sailing    Sailing Women's Windsurfer             NA
+  ```
+
+</details>
 
 </details>
 
@@ -61,6 +101,25 @@ Display only the names of the athletes who won a medal at the Summer Olympics.
 
   - [`cut`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#cut)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+name
+Edgar Lindenau Aabye
+Arvo Ossian Aaltonen
+Arvo Ossian Aaltonen
+Paavo Johannes Aaltonen
+Paavo Johannes Aaltonen
+Paavo Johannes Aaltonen
+Paavo Johannes Aaltonen
+Paavo Johannes Aaltonen
+Ragnhild Margrethe Aamodt
+Alf Lied Aanning
+  ```
+
+</details>
 </details>
 
 ## Exercise 4
@@ -78,6 +137,26 @@ Display only the names of the athletes who won a medal at the Summer Olympics, w
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+name
+Edgar Lindenau Aabye
+Arvo Ossian Aaltonen
+Paavo Johannes Aaltonen
+Ragnhild Margrethe Aamodt
+Alf Lied Aanning
+Willemien Aardenburg
+Pepijn Aardewijn
+Ann Kristin Aarnes
+Karl Jan Aas
+Thomas Valentin Aas
+  ```
+
+</details>
 
 </details>
 
@@ -99,6 +178,16 @@ What is the number of unique athletes who won at least one medal at the Summer O
 
   - [`count`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#count)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+count
+24545
+  ```
+
+</details>
 </details>
 
 
@@ -117,6 +206,25 @@ Who are the 10 athletes with the most medals at the Summer Olympics?
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
   - [`most-frequent`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#most-frequent)
+
+  <summary>Output</summary>
+  
+  
+  ```
+name                                            count
+Michael Fred Phelps, II                         28
+Larysa Semenivna Latynina (Diriy-)              18
+Nikolay Yefimovich Andrianov                    15
+Borys Anfiyanovych Shakhlin                     13
+Edoardo Mangiarotti                             13
+Takashi Ono                                     13
+Natalie Anne Coughlin (-Hall)                   12
+Birgit Fischer-Schmidt                          12
+Jennifer Elisabeth "Jenny" Thompson (-Cumpelik) 12
+Paavo Johannes Nurmi                            12
+  ```
+
+</details>
 
 </details>
 
@@ -140,6 +248,21 @@ Who was the oldest and the youngest athlete to compete in any Olympic?
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
+  <summary>Output</summary>
+  
+  
+  ```
+  # oldest
+id     name                   sex age height weight team          noc games       year season city      sport            event                                       medal
+128719 John Quincy Adams Ward M   97  NA     NA     United States USA 1928 Summer 1928 Summer Amsterdam Art Competitions Art Competitions Mixed Sculpturing, Statues NA
+
+  # youngest  
+id    name               sex age height weight team                          noc games       year season city   sport      event                                 medal
+71691 Dimitrios Loundras M   10  NA     NA     Ethnikos Gymnastikos Syllogos GRE 1896 Summer 1896 Summer Athina Gymnastics Gymnastics Men's Parallel Bars, Teams Bronze
+  ```
+
+</details>
+
 </details>
 
 ## Exercise 8
@@ -157,6 +280,26 @@ What are the top 10 teams with the most medals in any Olympic?
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
   - [`most-frequent`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#most-frequent)
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+team          count
+United States 5219
+Soviet Union  2451
+Germany       1984
+Great Britain 1673
+France        1550
+Italy         1527
+Sweden        1434
+Australia     1306
+Canada        1243
+Hungary       1127
+  ```
+
+</details>
 
 </details>
 
@@ -178,6 +321,26 @@ What is the average number of medals per year for each team?
 
   - [`sort`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#sort)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+team          medal_count_mean
+Unified Team  271
+Soviet Union  245.1
+East Germany  156.83333333333334
+United States 149.11428571428573
+West Germany  93
+Russia        79.28571428571429
+Germany       76.3076923076923
+China         60.06666666666667
+Great Britain 47.8
+Italy         46.27272727272727
+  ```
+
+</details>
+
 </details>
 
 ## Exercise 10
@@ -198,6 +361,16 @@ In which Summer Olympic edition did France won the most medals?
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+year medal_count
+1920 134
+  ```
+
+</details>
 </details>
 
 ## Exercise 11
@@ -220,6 +393,25 @@ For each team, what is the number of Gold, Silver, and Bronze medals?
 
   - [`unsparsify`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#unsparsify)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+team           Gold Bronze Silver
+Denmark/Sweden 6    -      -
+Finland        198  415    263
+Norway         299  281    330
+Netherlands    277  390    321
+Taifun         5    -      -
+France         455  577    518
+Italy          535  484    508
+Spain          108  136    239
+Azerbaijan     7    25     12
+Russia         366  393    351
+  ```
+
+</details>
 </details>
 
 
@@ -239,6 +431,16 @@ How many Judo athletes were present at the 2012 Summer Olympics?
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+count
+384
+  ```
+
+</details>
 </details>
 
 ## Exercise 13
@@ -256,7 +458,25 @@ Who are the 10 athletes with the most participations to any Olympic event (there
   - [`stats1`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#stats1)
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+name                             name_count
+Robert Tait McKenzie             58
+Heikki Ilmari Savolainen         39
+Joseph "Josy" Stoffel            38
+Ioannis Theofilakis              36
+Takashi Ono                      33
+Alexandros Theofilakis           32
+Andreas Wecker                   32
+Jean Lucien Nicolas Jacoby       32
+Alfrd (Arnold-) Hajs (Guttmann-) 32
+Johann "Hans" Sauter             31
+  ```
 
+</details>
 </details>
 
 ## Exercise 14
@@ -275,6 +495,16 @@ Who is the athlete with the most participations in a single Olympic, and in whic
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+name                 year name_count
+Robert Tait McKenzie 1932 44
+  ```
+
+</details>
 </details>
 
 ## Exercise 15
@@ -295,6 +525,16 @@ Who is the athlete who participated to the most Olympic editions, and how many e
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+name       name_count
+Ian Millar 10
+  ```
+
+</details>
 </details>
 
 ## Exercise 16
@@ -315,4 +555,21 @@ Which cities hosted several times the Olympics?
 
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+city         count
+London       3
+Paris        2
+Los Angeles  2
+Lake Placid  2
+Stockholm    2
+Athina       3
+Innsbruck    2
+Sankt Moritz 2
+  ```
+
+</details>
 </details>
