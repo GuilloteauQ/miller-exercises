@@ -1,8 +1,16 @@
 # Miller Exercises
 
-This repository contains some small exercises to learn the [Miller (`mlr`) tool](https://github.com/johnkerl/miller).
-
+This repository contains exercises to learn the [Miller (`mlr`) tool](https://github.com/johnkerl/miller).
 It is inspired by [Ben Porter's Awk Course](https://github.com/FreedomBen/awk-hack-the-planet).
+
+The exercises are focused for a data analysis workload involving CSVs.
+
+You would like to add new exercises?
+You think the Miller solutions could be improved?
+**Feel free to contribute!**
+
+
+## Getting the data
 
 The data comes from the [RGriffin Kaggle dataset: 120 years of Olympic history](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results/)
 
