@@ -35,9 +35,7 @@ Display the first few rows of the CSV in the pretty-print format
 
   [`head`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#head)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 id name                     sex age height weight team           noc games       year season city        sport         event                              medal
@@ -55,8 +53,6 @@ id name                     sex age height weight team           noc games      
 
 </details>
 
-</details>
-
 ## Exercise 2
 
 Display only the rows for the Summer Olympics.
@@ -71,9 +67,7 @@ Display only the rows for the Summer Olympics.
 
   [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 id name                               sex age height weight team           noc games       year season city        sport      event                                  medal
@@ -88,8 +82,6 @@ id name                               sex age height weight team           noc g
 13 Minna Maarit Aalto                 F   30  159    55.5   Finland        FIN 1996 Summer 1996 Summer Atlanta     Sailing    Sailing Women's Windsurfer             NA
 13 Minna Maarit Aalto                 F   34  159    55.5   Finland        FIN 2000 Summer 2000 Summer Sydney      Sailing    Sailing Women's Windsurfer             NA
   ```
-
-</details>
 
 </details>
 
@@ -109,9 +101,7 @@ Display only the names of the athletes who won a medal at the Summer Olympics.
 
   - [`cut`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#cut)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 name
@@ -127,7 +117,6 @@ Ragnhild Margrethe Aamodt
 Alf Lied Aanning
   ```
 
-</details>
 </details>
 
 ## Exercise 4
@@ -146,9 +135,7 @@ Display only the names of the athletes who won a medal at the Summer Olympics, w
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 name
@@ -163,8 +150,6 @@ Ann Kristin Aarnes
 Karl Jan Aas
 Thomas Valentin Aas
   ```
-
-</details>
 
 </details>
 
@@ -186,16 +171,13 @@ What is the number of unique athletes who won at least one medal at the Summer O
 
   - [`count`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#count)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 count
 24545
   ```
 
-</details>
 </details>
 
 
@@ -215,7 +197,7 @@ Who are the 10 athletes with the most medals at the Summer Olympics?
 
   - [`most-frequent`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#most-frequent)
 
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -231,8 +213,6 @@ Birgit Fischer-Schmidt                          12
 Jennifer Elisabeth "Jenny" Thompson (-Cumpelik) 12
 Paavo Johannes Nurmi                            12
   ```
-
-</details>
 
 </details>
 
@@ -256,7 +236,7 @@ Who was the oldest and the youngest athlete to compete in any Olympic?
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -268,8 +248,6 @@ id     name                   sex age height weight team          noc games     
 id    name               sex age height weight team                          noc games       year season city   sport      event                                 medal
 71691 Dimitrios Loundras M   10  NA     NA     Ethnikos Gymnastikos Syllogos GRE 1896 Summer 1896 Summer Athina Gymnastics Gymnastics Men's Parallel Bars, Teams Bronze
   ```
-
-</details>
 
 </details>
 
@@ -289,8 +267,7 @@ What are the top 10 teams with the most medals in any Olympic?
 
   - [`most-frequent`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#most-frequent)
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -306,8 +283,6 @@ Australia     1306
 Canada        1243
 Hungary       1127
   ```
-
-</details>
 
 </details>
 
@@ -329,9 +304,7 @@ What is the average number of medals per year for each team?
 
   - [`sort`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#sort)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 team          medal_count_mean
@@ -346,8 +319,6 @@ China         60.06666666666667
 Great Britain 47.8
 Italy         46.27272727272727
   ```
-
-</details>
 
 </details>
 
@@ -369,16 +340,13 @@ In which Summer Olympic edition did France won the most medals?
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 year medal_count
 1920 134
   ```
 
-</details>
 </details>
 
 ## Exercise 11
@@ -406,8 +374,7 @@ For each team, what is the number of Gold, Silver, and Bronze medals?
 
   - [`unsparsify`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#unsparsify)
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -424,7 +391,6 @@ Azerbaijan     7    25     12
 Russia         366  393    351
   ```
 
-</details>
 </details>
 
 
@@ -444,8 +410,7 @@ How many Judo athletes were present at the 2012 Summer Olympics?
 
   - [`uniq`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#uniq)
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -453,7 +418,6 @@ count
 384
   ```
 
-</details>
 </details>
 
 ## Exercise 13
@@ -471,9 +435,8 @@ Who are the 10 athletes with the most participations to any Olympic event (there
   - [`stats1`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#stats1)
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
-<details>
-  <summary>Output</summary>
-  
+
+  Output:
   
   ```
 name                             name_count
@@ -489,7 +452,6 @@ Alfrd (Arnold-) Hajs (Guttmann-) 32
 Johann "Hans" Sauter             31
   ```
 
-</details>
 </details>
 
 ## Exercise 14
@@ -508,16 +470,13 @@ Who is the athlete with the most participations in a single Olympic, and in whic
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 name                 year name_count
 Robert Tait McKenzie 1932 44
   ```
 
-</details>
 </details>
 
 ## Exercise 15
@@ -540,16 +499,13 @@ Who is the athlete who participated to the most Olympic editions, and how many e
 
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
-<details>
-  <summary>Output</summary>
-  
+  Output:
   
   ```
 name       name_count
 Ian Millar 10
   ```
 
-</details>
 </details>
 
 ## Exercise 16
@@ -572,8 +528,7 @@ Which cities hosted several times the Olympics?
 
   - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -588,7 +543,6 @@ Innsbruck    2
 Sankt Moritz 2
   ```
 
-</details>
 </details>
 
 
@@ -623,8 +577,7 @@ Which Olympics had the highest proportion of female athletes?
   - [`top`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#top)
 
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -641,7 +594,6 @@ year percentF
 1998 36.209270307480494
   ```
 
-</details>
 </details>
 
 ## Exercise 18
@@ -660,8 +612,7 @@ How many people with the first name "Quentin" won an Olympic medal?
 
   - [`count`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#count)
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -671,7 +622,6 @@ count
 
   sad...
 
-</details>
 </details>
 
 
@@ -702,8 +652,7 @@ Print the cumulative number of medals per year that Michael Phelps (`Michael Fre
 
 
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -715,7 +664,6 @@ year had_medal_sum had_medal_sum_rsum
 2016 6             28
   ```
 
-</details>
 </details>
 
 
@@ -741,8 +689,7 @@ What is the age, height, and weight of the average Olympian and of the median Ol
 
 
 
-<details>
-  <summary>Output</summary>
+  Output:
   
   
   ```
@@ -752,5 +699,4 @@ height     175.3719496519778  175
 weight     70.68833701161691  70
   ```
 
-</details>
 </details>
