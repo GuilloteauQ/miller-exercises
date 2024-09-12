@@ -666,3 +666,46 @@ count
 </details>
 </details>
 
+
+## Exercise 19
+
+Print the cumulative number of medals per year that Michael Phelps (`Michael Fred Phelps, II`) won during his Olympic carrer.
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p --from olympics.csv filter '$name == "Michael Fred Phelps, II"' then \
+                                put '$had_medal = ($medal != "NA") ? 1 : 0' then \
+                                stats1 -a sum -f had_medal -g year then \
+                                step -a rsum -f had_medal_sum
+  ```
+
+  - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
+
+  - [`put`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#put)
+
+  - [`?:`](https://miller.readthedocs.io/en/6.12.0/reference-dsl-builtin-functions/index.html#_28)
+
+  - [`stats1`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#stats1)
+
+  - [`step`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#step)
+
+
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+year had_medal_sum had_medal_sum_rsum
+2000 0             0
+2004 8             8
+2008 8             16
+2012 6             22
+2016 6             28
+  ```
+
+</details>
+</details>
