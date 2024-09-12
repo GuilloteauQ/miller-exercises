@@ -709,3 +709,40 @@ year had_medal_sum had_medal_sum_rsum
 
 </details>
 </details>
+
+
+## Exercise 20
+
+What is the age, height, and weight of the average Olympian and of the median Olympian?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p --from olympics.csv cut -f age,height,weight then\
+                                filter '$age != "NA" && $height != "NA" && $weight != "NA"' then\
+                                summary -a mean,median
+  ```
+
+  - [`cut`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#cut)
+
+  - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
+
+  - [`summary`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#summary)
+
+
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+field_name mean               median
+age        25.055508937016466 24
+height     175.3719496519778  175
+weight     70.68833701161691  70
+  ```
+
+</details>
+</details>
