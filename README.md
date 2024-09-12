@@ -636,3 +636,33 @@ year percentF
 </details>
 </details>
 
+## Exercise 18
+
+How many people with the first name "Quentin" won an Olympic medal?
+
+<details>
+  <summary>Solution</summary>
+  
+  
+  ```
+  mlr --c2p --from olympics.csv filter "$name =~ "^Quentin" && $medal != "NA"' then count
+  ```
+
+  - [`filter`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#filter)
+
+  - [`count`](https://miller.readthedocs.io/en/6.12.0/reference-verbs/index.html#count)
+
+<details>
+  <summary>Output</summary>
+  
+  
+  ```
+count
+0
+  ```
+
+  sad...
+
+</details>
+</details>
+
